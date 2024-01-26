@@ -1,0 +1,22 @@
+<div class="container">
+    <h2><strong>Componentes para editar</strong></h2>
+    <div class="body-component">
+        
+                
+                    <div *ngFor="let component of compos" class="component"> <div class="colCompo">
+                        <a [routerLink]="['/detail',component._id]"style="text-decoration: none; color:#014f7c">
+                        <img src="{{url+'/getimage/'+ component.image}}" *ngIf="component.image"><br>
+                        <div class="name-component"><strong>{{component.name}}</strong></div></a>
+                       <div>{{component.category}}</div> 
+                       <div>S/.{{component.precio}}.00</div> 
+                       <div>{{component.stock}}</div>
+                    </div>
+                </div>
+                
+                
+            
+        
+        
+    </div>
+    
+</div>

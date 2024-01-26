@@ -1,0 +1,23 @@
+<div class="detail-container">
+   
+        <div class="imagen">
+            <img src="{{url+'/getimage/'+ compo.image}}" *ngIf="compo.image">
+        </div>
+      <div class="dataCompo">
+        <div><h1><strong>{{compo.name}}</strong></h1></div>
+        <div><h2>{{compo.category}}</h2></div>
+        <div><h3><strong>S/.</strong>&nbsp;{{compo.precio}}.00</h3></div>
+        <div><strong>STOCK</strong>&nbsp;&nbsp;{{compo.stock}}</div>
+        <div class="buttons" style="margin: 5% 5% 5% 0;" *ngIf="confirm==false">
+            <button [routerLink]="['/edit',compo._id]" class="buttonEdit">Editar</button>
+            <button (click)="setConfirm(true)" class="buttonDelete">Borrar</button>
+        </div>
+        <div class="buttons" style="margin: 5% 5% 5% 0;" *ngIf="confirm==true">
+            <div id="spanConfirm"><span>¿Estas seguro de borrar este componente?</span></div>
+            <button (click)="setConfirm(false)" class="buttonCancel">Cancelar</button>
+            <button (click)="deleteCompo(compo._id)" class="buttonConfirm">Confirmar</button>
+        </div>
+    </div>
+    
+    
+</div>

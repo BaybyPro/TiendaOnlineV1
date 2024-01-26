@@ -1,0 +1,88 @@
+.col-3 {
+    display: inline-flex;
+    padding: 0 0 0 30px;
+    max-width: 250px;
+}
+
+.navbar{
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+}
+
+.cuenta-header{
+    display: grid;
+    background-color: initial;
+    border: 0px;
+    color: #008cba
+}
+
+.nav-link{
+    height: 100%;
+    font-size: 17px;
+}
+
+#logo{
+    height: 90px;
+    width: 160px;
+    padding: 0%;
+}
+.col-3{
+    background:#0879ba;
+    position: relative;
+  
+}
+
+
+.container-fluid{
+    padding: 0%;
+}
+
+.freebirdMaterialHeaderbannerSectionTriangleContainer {
+    
+    overflow: hidden;
+    position: relative;
+    width: 90px;
+    
+}
+@media (max-width: 1138px){
+    .freebirdMaterialHeaderbannerSectionTriangleContainer,
+    .col-3{
+        display: none;
+    }
+}
+
+
+
+
+
+.freebirdSolidFill {
+    fill: #0879ba;
+    stroke: #0879ba;
+}
+
+.buscador-header, .buscador-header2{
+    margin: auto;
+    width: 60%;
+}
+.input-group-prepend > span{
+    border-radius: 10em 0 0 10em;
+    border: 2px solid #0879ba;
+    border-right: 0px;
+    color: #0879ba;
+    background: #fff;
+}
+
+.input-group > input {
+    
+    border-radius: 0 10em 10em 0;
+    border: 2px solid #0879ba;
+    border-left: 0px;
+    
+
+}
+
+
+

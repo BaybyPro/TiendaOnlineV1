@@ -1,0 +1,77 @@
+
+.detail-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2% 6% 0;
+}
+
+.imagen{
+    display: flex;
+    flex: 1 1 55%;
+    box-sizing: border-box; /* Esto asegura que el padding no aumente el ancho de la columna */
+}
+@media (max-width:1138px){
+.imagen{
+    max-width: 500px;
+    flex: 1 1 100%;
+}
+.dataCompo{
+    flex: 1 1 100%;
+}
+@media(max-width:768px){
+.dataCompo h1{
+    font-size: 150%;
+}
+
+}
+}
+.imagen img{
+    width: 100%;
+}
+.dataCompo{
+    margin: 5% 0 0 0;
+    flex: 1 1 45%;
+    box-sizing: border-box;
+}
+
+.buttons button{
+    border-radius: 0.55em;
+    font-size: 140%;
+    background: #888888;
+    
+}
+
+.buttonEdit{
+ margin-left: 1%;
+ color: #00466e;
+ font-weight: bold;
+ border-color: #00466e;
+}
+
+.buttonDelete{
+    margin-left: 4%;
+    color: #910000;
+    font-weight: bold;
+    border-color: #910000;
+}
+
+.buttonCancel{
+    margin-left: 1%;
+    color: #00466e;
+    font-weight: bold;
+    border-color: #00466e;
+}
+.buttonConfirm{
+    margin-left: 4%;
+    color: #910000;
+    font-weight: bold;
+    border-color: #910000;
+}
+
+span{
+    font-weight: bold;
+    color: red;
+}
+#spanConfirm{
+    margin-bottom: 5%;
+}

@@ -1,0 +1,14 @@
+<div class="containerTask">
+  <div class="bxslider">
+    <div><img src="assets/flor4.jpg"/></div>
+    <div><img src="assets/flor5.jpg"/></div>
+    <div><img src="assets/flor6.jpg"/></div>
+  </div>
+<ul class="list-group">
+    <li class="list-group.item" *ngFor="let task of tasks">
+       {{task._id}} - {{task.name}} - {{task.description}}
+    </li>
+</ul>
+
+</div>
+

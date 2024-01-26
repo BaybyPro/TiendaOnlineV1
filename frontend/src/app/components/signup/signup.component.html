@@ -1,0 +1,27 @@
+
+<div class="container p-5">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+         <div class="card">
+             <div class="card-header">
+                 SignUp
+             </div>
+             <div class="card-body">
+                 <form  (ngSubmit)="signUp()">
+                     <div style="margin-bottom: 10px;">
+                         <span *ngIf="!status" style="color:brown">Correo ya registrado</span>
+                     </div>
+                     <div class="form-group">
+                         <input type="text" name="email" [(ngModel)]="user.email" class="form-control" placeholder="email" required autofocus>
+                     </div>
+                     <div class="form-group">
+                         <input type="password" name="password" [(ngModel)]="user.password" class="form-control" placeholder="password" required autofocus>
+                     </div>
+                     <input type="submit"  class="btn btn-primary btn-block" value="SignUp">
+                 </form>
+             </div>
+         </div>
+        </div>
+     </div>
+
+</div>

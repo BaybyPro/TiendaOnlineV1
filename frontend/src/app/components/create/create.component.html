@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <div class="card">
+    <h1 class="card-header"><strong>{{title}}</strong></h1>
+  <div class="success" *ngIf="status">
+      {{success}}<a [routerLink]="['/detail',saveCompo._id]">aquí&nbsp;&nbsp;</a>
+      <button class="button-close" (click)="hideStatus()"><strong>x</strong></button>
+  </div>
+    <form #compoForm="ngForm" (ngSubmit)="onSubmit(compoForm)">
+      <div class="form.group">
+          <label>Name</label><span *ngIf="name.touched && !name.valid">&nbsp;&nbsp;&nbsp;&nbsp;Campo requerido!</span>
+          <input type="text" name="name" #name="ngModel" [(ngModel)]="compo.name" class="form-control"
+          required>
+      </div>
+      <div class="form.group">
+        <label>categoria</label><span *ngIf="category.touched && !category.valid">&nbsp;&nbsp;&nbsp;&nbsp;Campo requerido</span>
+        <input type="text" name="category" #category="ngModel" [(ngModel)]="compo.category"  class="form-control"
+        required>
+    </div>
+    <div class="form.group">
+        <label>precio S/.</label><span *ngIf="precio.touched && !precio.valid">&nbsp;&nbsp;&nbsp;&nbsp;Campo requerido</span>
+        <input type="text" name="precio" #precio="ngModel" [(ngModel)]="compo.precio"  class="form-control"
+        required>
+    </div>
+    <div class="form.group">
+        <label>stock</label><span *ngIf="stock.touched && !stock.valid">&nbsp;&nbsp;&nbsp;&nbsp;Campo requerido</span>
+        <input type="text" name="stock" #stock="ngModel"[(ngModel)]="compo.stock" class="form-control"
+        required>
+    </div>
+    <div class="form.group mt-4" >
+          <label>image</label>
+          <div *ngIf="compo.image">
+            <img [src]="url + '/getimage/' + compo.image" style="width: 20%;"></div>
+        <input type="file" name="image" (change)="fileChangeEvent($event)">
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary mt-4" [disabled]="!compoForm.form.valid">
+    </div>
+    </form>
+  </div>
+</div>

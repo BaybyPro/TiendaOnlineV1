@@ -1,0 +1,101 @@
+
+<nav class="navbar navbar-expand-md bg-body-tertiary bg-dark" >
+
+  <div class="container-fluid">
+    
+    <div class="col-3">
+      <a routerLink="/task">
+        <img id="logo" src="assets/logoProCompu.png"  alt="Logo">
+    </a>
+    </div>
+    <div class="freebirdMaterialHeaderbannerSectionTriangleContainer">
+
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 10 10" preserveAspectRatio="none" class="freebirdMaterialHeaderbannerSectionTriangle"> 
+     
+           <polygon class="freebirdSolidFill" points="0,0 10,0 0,10"></polygon>
+     
+      </svg>
+   </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="buscador-header2" *ngIf="screenWidth < 768">
+      <form>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+          </div>
+          <input type="search" class="form-control" placeholder="¿Qué estás buscando?" style="font-size: 120%;">
+        </div>
+       </form>
+    </div>
+    
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav ml-5">
+        <li class="nav-item">
+          <button class="nav-link cuenta-header pr-0 pl-0 ml-3 mr-3" routerLink="/task" routerLinkActive="active">
+            <i class="fa fa-desktop" aria-hidden="true"></i>
+            <span>Store</span>
+          </button>
+        </li>
+        <li class="nav-item" *ngIf="authService.loggedIn()">
+          <button class="nav-link cuenta-header pr-0 pl-0 ml-3 mr-3"  routerLink="/private" routerLinkActive="active">
+            <i class="fa fa-user-secret" aria-hidden="true"></i>
+            <span>Private</span>
+          </button>
+          
+        </li>
+        <li class="nav-item" *ngIf="authService.loggedIn()">
+          <button class="nav-link cuenta-header pr-0 pl-0 ml-3 mr-3"  routerLink="/create" routerLinkActive="active">
+            <i class="fa fa-upload" aria-hidden="true"></i>
+            <span>Create</span>
+          </button>
+        </li>
+      </ul>
+      <div class="buscador-header">
+           <form>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
+              </div>
+              <input type="search" class="form-control" placeholder="¿Qué estás buscando?" style="font-size: 120%;">
+            </div>
+           </form>
+      </div>
+      <ul class="navbar-nav ml-auto mr-5 ">
+       <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+        <li class="nav-item">
+          <button class="nav-link cuenta-header pr-0 pl-0 ml-3 mr-3" routerLink="/signin">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span> Login</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link cuenta-header pr-0 pl-0 ml-3 mr-3"  routerLink="/signup">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <span>Register</span>
+          </button>
+        </li>
+       </ng-container>
+       <ng-template #loggedIn>
+        <li class="nav-item">
+          <button class="nav-link cuenta-header pr-0 pl-0 ml-3 mr-3">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span> Cuenta</span>
+          </button>
+        </li>
+         <li class="nav-item">
+          <button class="nav-link cuenta-header pr-0 pl-0 ml-3 mr-3" (click)="authService.logout()" routerLinkActive="active">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <span>Logout</span>
+          </button>
+         </li>
+       </ng-template>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <router-outlet></router-outlet>
+
